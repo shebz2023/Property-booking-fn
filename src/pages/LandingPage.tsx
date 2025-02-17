@@ -7,9 +7,12 @@ export const LandingPage: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <section>
-        <Hero />
-        <Stats />
+      <section className="flex font-poppins">
+        <div>
+          <Hero />
+          <Stats />
+        </div>
+        <div className="bg-red-400"></div>
       </section>
     </div>
   );
