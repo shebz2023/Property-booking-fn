@@ -1,19 +1,19 @@
 const Stats = () => {
   return (
-    <div className="bg-white py-12">
+    <div className="py-12 font-poppins">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div className="bg-neutral-950 border border-[#1A1A1A] p-5 rounded-lg">
+            <h2 className="text-3xl font-bold">100+</h2>
+            <p className="text-neutral-400 text-xs">Happy Customers</p>
+          </div>
+          <div className="bg-neutral-950 border border-[#1A1A1A] p-5 rounded-lg">
             <h2 className="text-3xl font-bold">200+</h2>
-            <p className="text-gray-600">Happy Customers</p>
+            <p className="text-neutral-400 text-xs">Properties For Clients</p>
           </div>
-          <div>
-            <h2 className="text-3xl font-bold">10k+</h2>
-            <p className="text-gray-600">Properties For Clients</p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold">16+</h2>
-            <p className="text-gray-600">Years of Experience</p>
+          <div className="bg-neutral-950 border border-[#1A1A1A] p-5 rounded-lg">
+            <h2 className="text-3xl font-bold">2+</h2>
+            <p className="text-neutral-400 text-xs">Years of Experience</p>
           </div>
         </div>
       </div>
