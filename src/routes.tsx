@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import { UserLayout } from "./layouts/user.layouts";
 import { RootLayout } from "./layouts/RootLayout";
 import { LandingPage } from "./pages/LandingPage";
-import UserDashboard from "./pages/user/UserDashboard";
-import { LoginPage } from "./pages/Auth/login";
+import { LoginPage } from "./pages/Auth/Login";
+import RenterDashboard from "./pages/user/RenterDashboard";
+import { UserLayout } from "./layouts/user.layouts";
+import HostDashboard from "./pages/user/HostDashboard";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,9 @@ export const router = createBrowserRouter([
   {
     path: "/user",
     element: <UserLayout />,
-    children: [{ index: true, element: <UserDashboard /> }],
+    children: [
+      { index: true, element: <RenterDashboard /> },
+      { path: "host", element: <HostDashboard /> },
+    ],
   },
 ]);

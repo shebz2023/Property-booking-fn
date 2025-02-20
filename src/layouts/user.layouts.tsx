@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-
+import bgImage from "../assets/topography.svg";
 export const UserLayout: React.FC = () => {
   return (
     <>
-      <div>this is the user Layout</div>
-      <main className="flex-1 overflow-y-auto pb-3">
+      <main
+        className="flex bg-neutral-950"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
         <Outlet />
       </main>
     </>
