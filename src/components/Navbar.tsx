@@ -30,37 +30,39 @@ export const Navbar: React.FC = () => {
       </div>
       <div className="flex space-x-4 text-xs font-light">
         <a
-          href="#"
+          href="/"
           className="hover:text-gray-300 transition-colors duration-300"
         >
           Home
         </a>
         <a
-          href="#"
+          href="/"
           className="hover:text-gray-300 transition-colors duration-300"
         >
           About Us
         </a>
         <a
-          href="#"
+          href="/"
           className="hover:text-gray-300 transition-colors duration-300"
         >
           Properties
         </a>
         <a
-          href="#"
+          href="/"
           className="hover:text-gray-300 transition-colors duration-300"
         >
           Services
         </a>
         <a
-          href="#"
+          href="/"
           className="hover:text-gray-300 transition-colors duration-300"
         >
           Connect Us
         </a>
       </div>
-      <div className="border-b border-purple-600 text-sm">Login</div>
+      <a href="login" className="border-b border-purple-600 text-sm">
+        Login
+      </a>
     </nav>
   );
 };
