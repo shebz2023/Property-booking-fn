@@ -1,3 +1,3 @@
 export const NotFoundPage: React.FC = () => {
-  return <div>NotFoundPage</div>;
+  return <div className="bg-black h-screen">NotFoundPage</div>;
 };

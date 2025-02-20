@@ -11,7 +11,6 @@ import BottomSection from "../components/BottomSection";
 export const LandingPage: React.FC = () => {
   return (
     <div className="bg-cover bg-center">
-      <Navbar />
       <section
         className="font-poppin bg-black"
         style={{ backgroundImage: `url(${bgrid})` }}

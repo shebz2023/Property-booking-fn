@@ -7,6 +7,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const BottomSection = () => {
   const items = ["House", "appartments", "Homes", "Rooms", "Settlements"];
@@ -21,7 +22,7 @@ const BottomSection = () => {
             Your Perfect Home is Just a click Away
           </h2>
           <button className="bg-purple-950 border text-white text-xs border-neutral-800 py-2 px-4 rounded-lg hover:bg-purple-800 hover:text-neutral-300 transition duration-300">
-            View Properties
+            <Link to="/properties">View Properties</Link>
           </button>
         </div>
         <p className="text-left text-xs text-neutral-400 mb-8 leading-relaxed">

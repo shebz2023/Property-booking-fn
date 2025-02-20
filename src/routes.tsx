@@ -6,6 +6,7 @@ import { LoginPage } from "./pages/Auth/Login";
 import RenterDashboard from "./pages/user/RenterDashboard";
 import { UserLayout } from "./layouts/user.layouts";
 import HostDashboard from "./pages/user/HostDashboard";
+import PropertiesPage from "./pages/PropertiesPage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> },
       { path: "*", element: <NotFoundPage /> },
+      { path: "/Properties", element: <PropertiesPage /> },
       { path: "/login", element: <LoginPage /> },
     ],
   },

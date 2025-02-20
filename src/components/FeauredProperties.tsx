@@ -1,4 +1,5 @@
 import featuredimage from "../assets/apartment.jpg";
+import PropertyCard from "./PropertyCard";
 const FeaturedProperties = () => {
   const properties = [
     {
@@ -45,41 +46,7 @@ const FeaturedProperties = () => {
         </p>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {properties.map((property, index) => (
-            <div
-              key={index}
-              className="h-full border border-neutral-900 rounded-lg shadow-lg "
-            >
-              <img
-                src={property.image}
-                alt={property.title}
-                className="p-5 w-full h-1/2 object-cover rounded-3xl"
-              />
-              <div className="px-6">
-                <h3 className="text-md font-Urbanist mb-2">{property.title}</h3>
-                <p className="text-neutral-400 text-sm mb-4">
-                  {property.description}
-                </p>
-                <div className="flex flex-wrap gap-2 my-6">
-                  {property.features.map((feature, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-black border border-neutral-700 text-white text-xs px-3 py-1 rounded-full"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex justify-between">
-                  <div className="flex  flex-col">
-                    <h2 className="text-neutral-400 text-xs">price</h2>
-                    <p className="text-md text-white mb-4">{property.price}</p>
-                  </div>
-                  <button className="h-10 cursor-pointer w-fit text-xs bg-purple-950 text-white px-4 rounded-lg hover:bg-purple-800 transition duration-300">
-                    View Property Details
-                  </button>
-                </div>
-              </div>
-            </div>
+            <PropertyCard key={index} property={property} />
           ))}
         </div>
       </div>

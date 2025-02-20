@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
           About Us
         </a>
         <a
-          href="/"
+          href="/properties"
           className="hover:text-gray-300 transition-colors duration-300"
         >
           Properties

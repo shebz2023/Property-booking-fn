@@ -1,5 +1,4 @@
 import bgImage from "../../assets/bg-grid-lighter.svg";
-import { Navbar } from "../../components/Navbar";
 import leftimage from "../../assets/whitepeople.png";
 import { Link } from "react-router-dom";
 
@@ -9,7 +8,6 @@ export const LoginPage = () => {
       className=" justify-center items-center min-h-screen bg-black"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <Navbar />
       <div className="w-full h-screen flex">
         <div className="w-1/2  flex justify-center items-center">
           <div className="h-2/3  rounded-full">
