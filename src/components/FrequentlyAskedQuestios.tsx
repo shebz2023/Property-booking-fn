@@ -1,6 +1,5 @@
 import profile from "../assets/jondoe.jpg";
 import profiletwo from "../assets/secondjondoe.jpg";
-import star from "../assets/Shape.png";
 const FrequentlyAskedQuestions = () => {
   const properties = [
     {

@@ -6,6 +6,7 @@ import StatsHero from "../components/StatsHero";
 import FeaturedProperties from "../components/FeauredProperties";
 import Testimonials from "../components/testimonials";
 import FrequentlyAskedQuestions from "../components/FrequentlyAskedQuestios";
+import BottomSection from "../components/BottomSection";
 
 export const LandingPage: React.FC = () => {
   return (
@@ -27,6 +28,9 @@ export const LandingPage: React.FC = () => {
       <section className="">
         <FrequentlyAskedQuestions />
       </section>
+      <footer className="">
+        <BottomSection />
+      </footer>
     </div>
   );
 };

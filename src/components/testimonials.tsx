@@ -70,7 +70,7 @@ const Testimonials = () => {
                 </div>
                 <div className="flex flex-col">
                   <p className="font-thin">{property.name}</p>
-                  <p className="font-thin text-neutral-400">
+                  <p className="font-light text-sm text-neutral-400">
                     {property.features}
                   </p>
                 </div>

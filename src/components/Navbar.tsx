@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
           Connect Us
         </a>
       </div>
-      <div>Login</div>
+      <div className="border-b border-purple-600 text-sm">Login</div>
     </nav>
   );
 };
