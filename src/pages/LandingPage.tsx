@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar } from "../components/Navbar";
 import Hero from "../components/Hero";
 import bgrid from "../assets/bg-grid-lighter.svg";
 import StatsHero from "../components/StatsHero";

@@ -4,7 +4,7 @@ import { RootLayout } from "./layouts/RootLayout";
 import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/Auth/Login";
 import RenterDashboard from "./pages/user/RenterDashboard";
-import { UserLayout } from "./layouts/user.layouts";
+import { UserLayout } from "./layouts/User.layouts";
 import HostDashboard from "./pages/user/HostDashboard";
 import PropertiesPage from "./pages/PropertiesPage";
 export const router = createBrowserRouter([
