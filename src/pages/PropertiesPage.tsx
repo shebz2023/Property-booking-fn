@@ -5,8 +5,20 @@ import { CiSearch, CiCalendar } from "react-icons/ci";
 import { FaChevronCircleDown } from "react-icons/fa";
 import PropertyCard from "../components/PropertyCard";
 import featuredimage from "../assets/apartment.jpg";
+import { GET_PROPERTIES } from "../services/api";
+import { useQuery } from "@apollo/client";
 
 export default function PropertiesPage() {
+  const { loading, error, data } = useQuery(GET_PROPERTIES);
+
+  if (loading) console.log("loading....", loading);
+
+  if (error) console.log("the error is:", error);
+
+  if (data) console.log("the data is :", data);
+
+  console.log("===========================");
+
   const properties = [
     {
       title: "Convention center",
