@@ -1,13 +1,11 @@
-import RenterSideBar from "../../components/Dashboard/RenterSideBar";
 
-export default function RenterDashboard() {
+export default function MyBookings() {
   const bookings = [
     { id: 1, name: "Beachfront Villa", status: "Pending" },
     { id: 2, name: "City Center Apartment", status: "canceled" },
   ];
   return (
     <>
-      <RenterSideBar />
       <div className="w-full text-white">
         <div className="bg-black p-6 rounded-lg shadow-lg">
           <h2 className="text-xl font-semibold mb-6">My bookings</h2>

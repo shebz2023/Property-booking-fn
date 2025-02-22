@@ -1,6 +1,4 @@
-import HostSideBar from "../../components/Dashboard/HostSideBar";
-
-export default function HostDashboard() {
+export default function MyProperties() {
   const properties = [
     { id: 1, name: "Beachfront Villa", location: "Miami, FL" },
     { id: 2, name: "City Center Apartment", location: "New York, NY" },
@@ -8,7 +6,6 @@ export default function HostDashboard() {
 
   return (
     <>
-      <HostSideBar />
       <div className="w-full text-white p-6">
         {/* Add Property Section */}
         <div className="bg-black p-6 rounded-lg shadow-lg mb-6">
