@@ -19,3 +19,12 @@ export const GET_PROPERTIES = gql`
     }
   }
 `;
+export const MY_PROPERTIES = gql`
+  query MyProperties {
+    myProperties {
+      title
+      title
+      location
+    }
+  }
+`;

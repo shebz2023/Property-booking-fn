@@ -17,36 +17,7 @@ export default function PropertiesPage() {
     id: string;
     image: string;
   }
-  // const properties: Property[] = [
-  //   {
-  //     title: "Luxury Apartment",
-  //     description:
-  //       "A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.",
-  //     pricePerNight: 200,
-  //     location: "New York, NY",
-  //     id: "1",
-  //     image:
-  //       "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   },
-  //   {
-  //     title: "Cozy Cottage",
-  //     description:
-  //       "A quaint cottage in the countryside perfect for a peaceful getaway.",
-  //     pricePerNight: 120,
-  //     location: "Lake Tahoe, CA",
-  //     id: "2",
-  //     image: "https://images.app.goo.gl/6141g3G2icCKt2aL6",
-  //   },
-  //   {
-  //     title: "Beachfront Villa",
-  //     description:
-  //       "A luxurious beachfront villa with a private pool and direct beach access.",
-  //     pricePerNight: 350,
-  //     location: "Miami, FL",
-  //     id: "3",
-  //     image: "https://images.app.goo.gl/6141g3G2icCKt2aL6",
-  //   },
-  // ];
+  
   const { loading, error, data } = useQuery(GET_PROPERTIES);
 
   if (loading) return <LoadingSkeleton />;

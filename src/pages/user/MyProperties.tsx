@@ -1,8 +1,19 @@
+import { MY_PROPERTIES } from "../../services/api";
+import { useQuery } from "@apollo/client";
+import LoadingSkeleton from "../../components/LoadingSkeleton";
+
 export default function MyProperties() {
-  const properties = [
-    { id: 1, name: "Beachfront Villa", location: "Miami, FL" },
-    { id: 2, name: "City Center Apartment", location: "New York, NY" },
-  ];
+  interface Property {
+    id: string;
+    title: string;
+    location: string;
+  }
+
+  const { loading, error, data } = useQuery(MY_PROPERTIES);
+
+  if (loading) return <LoadingSkeleton />;
+  if (error) return `Error! ${error.message}`;
+  console.log(data, "my properties");
 
   return (
     <>
@@ -51,19 +62,19 @@ export default function MyProperties() {
         {/* Properties List Section */}
         <div className="bg-black p-6 rounded-lg shadow-lg">
           <h2 className="text-xl font-semibold mb-6">My Properties</h2>
-          {properties.length === 0 ? (
+          {data?.properties.length === 0 ? (
             <p className="text-neutral-400">
               You haven't added any properties yet. Start by adding one!
             </p>
           ) : (
             <ul className="space-y-4">
-              {properties.map((property) => (
+              {data?.properties.map((property: Property) => (
                 <li
                   key={property.id}
                   className="flex justify-between items-center bg-neutral-900 p-4 rounded-lg"
                 >
                   <div>
-                    <h3 className="text-lg font-semibold">{property.name}</h3>
+                    <h3 className="text-lg font-semibold">{property.title}</h3>
                     <p className="text-neutral-300">{property.location}</p>
                   </div>
                   <div className="flex gap-4">
