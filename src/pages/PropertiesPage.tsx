@@ -7,6 +7,7 @@ import PropertyCard from "../components/PropertyCard";
 import { GET_PROPERTIES } from "../services/api";
 import { useQuery } from "@apollo/client";
 import LoadingSkeleton from "../components/LoadingSkeleton";
+import { useAuth } from "../utils/authContext";
 
 export default function PropertiesPage() {
   interface Property {
@@ -17,6 +18,7 @@ export default function PropertiesPage() {
     id: string;
     image: string;
   }
+  const { user } = useAuth();
   
   const { loading, error, data } = useQuery(GET_PROPERTIES);
 
