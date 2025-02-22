@@ -1,8 +1,14 @@
 import bgImage from "../../assets/bg-grid-lighter.svg";
 import leftimage from "../../assets/whitepeople.png";
 import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 export const LoginPage = () => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+  const handleGoogleLogin = async () => {
+    window.location.href = `${BACKEND_URL}/auth/google`
+  };
+
   return (
     <div
       className=" justify-center items-center min-h-screen bg-black"
@@ -23,7 +29,7 @@ export const LoginPage = () => {
             <h3 className="text-lg font-Urbanist text-center text-white ">
               LOGIN TO CONTINUE
             </h3>
-            <form >
+            <form>
               <div className="mb-4">
                 <label
                   htmlFor="email"
@@ -57,14 +63,26 @@ export const LoginPage = () => {
               </p>
               <button
                 type="submit"
-                className="w-full py-2 bg-black border border-neutral-600 text-white font-Urbanist rounded-md hover:bg-neutral-900 duration-300 cursor-pointer"
+                className="w-full cursor-pointer flex items-center justify-center gap-2 py-2 bg-black border border-neutral-600 text-white font-Urbanist rounded-md hover:bg-neutral-900 transition-all duration-300 focus:ring-2 focus:ring-neutral-500"
               >
                 Login
+              </button>
+              <p className="text-neutral-400 text-center my-4">or</p>
+              <button
+                type="button"
+                onClick={handleGoogleLogin}
+                className="w-full text-xs cursor-pointer flex items-center justify-center gap-2 py-2 bg-black border border-dashed border-neutral-600 text-white font-Urbanist rounded-md hover:bg-neutral-900 transition-all duration-300 focus:ring-2 focus:ring-neutral-500"
+              >
+                <FcGoogle />
+                Sign In with Google
               </button>
             </form>
             <p className="text-xs mt-4">
               <span className="text-white">Don't Have an account?</span>
-              <Link to="" className="pl-3 text-blue-400 hover:text-blue-200 duration-300">
+              <Link
+                to=""
+                className="pl-3 text-blue-400 hover:text-blue-200 duration-300"
+              >
                 Create One
               </Link>
             </p>

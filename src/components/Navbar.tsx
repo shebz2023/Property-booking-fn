@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaUserCircle } from "react-icons/fa";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,7 +62,8 @@ export const Navbar: React.FC = () => {
         </a>
       </div>
       <a href="login" className="border-b border-purple-600 text-sm">
-        Login
+        
+        <FaUserCircle size={26} className="text-purple-600" />
       </a>
     </nav>
   );
