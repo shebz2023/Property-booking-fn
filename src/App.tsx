@@ -8,7 +8,6 @@ function App() {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     // Fetch user data from the backend when the app loads
-    console.log(`we are fetching on ${BACKEND_URL}/api/current-user`);
     fetch(`${BACKEND_URL}/api/current-user`, { credentials: "include" })
       .then((response) => response.json())
       .then((data) => {

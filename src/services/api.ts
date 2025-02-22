@@ -7,6 +7,7 @@ export const GET_PROPERTIES = gql`
       pricePerNight
       location
       id
+      image
       host {
         name
       }

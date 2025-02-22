@@ -3,7 +3,6 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { RootLayout } from "./layouts/RootLayout";
 import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/Auth/Login";
-import RenterDashboard from "./pages/user/MyBookings";
 import { UserLayout } from "./layouts/User.layouts";
 import PropertiesPage from "./pages/PropertiesPage";
 import Profile from "./pages/user/Profile";

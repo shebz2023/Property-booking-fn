@@ -4,47 +4,55 @@ import bgimage from "../assets/topography.svg";
 import { CiSearch, CiCalendar } from "react-icons/ci";
 import { FaChevronCircleDown } from "react-icons/fa";
 import PropertyCard from "../components/PropertyCard";
-import featuredimage from "../assets/apartment.jpg";
 import { GET_PROPERTIES } from "../services/api";
 import { useQuery } from "@apollo/client";
+import LoadingSkeleton from "../components/LoadingSkeleton";
 
 export default function PropertiesPage() {
+  interface Property {
+    title: string;
+    description: string;
+    pricePerNight: number;
+    location: string;
+    id: string;
+    image: string;
+  }
+  // const properties: Property[] = [
+  //   {
+  //     title: "Luxury Apartment",
+  //     description:
+  //       "A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.A beautiful apartment with stunning views and modern amenities.",
+  //     pricePerNight: 200,
+  //     location: "New York, NY",
+  //     id: "1",
+  //     image:
+  //       "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   },
+  //   {
+  //     title: "Cozy Cottage",
+  //     description:
+  //       "A quaint cottage in the countryside perfect for a peaceful getaway.",
+  //     pricePerNight: 120,
+  //     location: "Lake Tahoe, CA",
+  //     id: "2",
+  //     image: "https://images.app.goo.gl/6141g3G2icCKt2aL6",
+  //   },
+  //   {
+  //     title: "Beachfront Villa",
+  //     description:
+  //       "A luxurious beachfront villa with a private pool and direct beach access.",
+  //     pricePerNight: 350,
+  //     location: "Miami, FL",
+  //     id: "3",
+  //     image: "https://images.app.goo.gl/6141g3G2icCKt2aL6",
+  //   },
+  // ];
   const { loading, error, data } = useQuery(GET_PROPERTIES);
 
-  if (loading) console.log("loading....", loading);
+  if (loading) return <LoadingSkeleton />;
+  if (error) return `Error! ${error.message}`;
+  console.log(data);
 
-  if (error) console.log("the error is:", error);
-
-  if (data) console.log("the data is :", data);
-
-  console.log("===========================");
-
-  const properties = [
-    {
-      title: "Convention center",
-      description:
-        "This sleek, modern house features clean lines and an open-concept floor plan",
-      features: ["4-Bedroom", "3-Bathroom", "Villa"],
-      price: "$550,000",
-      image: featuredimage,
-    },
-    {
-      title: "Ladisona blue",
-      description:
-        "This charming Victorian home is a blend of intricate architecture ",
-      features: ["2-Bedroom", "2-Bathroom"],
-      price: "$550,000",
-      image: featuredimage,
-    },
-    {
-      title: "Rustic Retreat Cottage",
-      description:
-        "loremIt is a long established fact that a reader will be distracted ",
-      features: ["3-Bedroom", "2.5-Bathroom"],
-      price: "$550,000",
-      image: featuredimage,
-    },
-  ];
   return (
     <div className="bg-neutral-950 h-screen">
       <section className="bg-black">
@@ -103,7 +111,7 @@ export default function PropertiesPage() {
           </div>
         </div>
         <div className="p-18 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {properties.map((property, index) => (
+          {data?.properties?.map((property: Property, index: number) => (
             <PropertyCard key={index} property={property} />
           ))}
         </div>
