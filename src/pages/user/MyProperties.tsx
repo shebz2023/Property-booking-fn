@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import LoadingSkeleton from "../../components/LoadingSkeleton";
 
 export default function MyProperties() {
-  interface Property {
+  interface MyProperty {
     id: string;
     title: string;
     location: string;
@@ -62,20 +62,20 @@ export default function MyProperties() {
         {/* Properties List Section */}
         <div className="bg-black p-6 rounded-lg shadow-lg">
           <h2 className="text-xl font-semibold mb-6">My Properties</h2>
-          {data?.properties.length === 0 ? (
+          {data?.myProperties.length === 0 ? (
             <p className="text-neutral-400">
               You haven't added any properties yet. Start by adding one!
             </p>
           ) : (
             <ul className="space-y-4">
-              {data?.properties.map((property: Property) => (
+              {data.myProperties.map((myProperty: MyProperty) => (
                 <li
-                  key={property.id}
+                  key={myProperty.id}
                   className="flex justify-between items-center bg-neutral-900 p-4 rounded-lg"
                 >
                   <div>
-                    <h3 className="text-lg font-semibold">{property.title}</h3>
-                    <p className="text-neutral-300">{property.location}</p>
+                    <h3 className="text-lg font-semibold">{myProperty.title}</h3>
+                    <p className="text-neutral-300">{myProperty.location}</p>
                   </div>
                   <div className="flex gap-4">
                     <button className="cursor-pointer bg-black border border-neutral-950 text-white py-1 px-3 rounded hover:bg-neutral-950 hover:border-neutral-600">
