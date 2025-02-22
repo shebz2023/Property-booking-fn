@@ -1,5 +1,6 @@
 import { JSX, useState } from "react";
 import { FaHome, FaCalendarAlt, FaUser, FaCog, FaBars, FaTimes } from "react-icons/fa";
+import LogoutButton from "./Logout";
 
 export default function RenterSideBar() {
   const [isOpen, setIsOpen] = useState(true);
@@ -34,6 +35,7 @@ export default function RenterSideBar() {
           <SidebarItem icon={<FaCalendarAlt />} text="Bookings" isOpen={isOpen} />
           <SidebarItem icon={<FaUser />} text="Profile" isOpen={isOpen} />
           <SidebarItem icon={<FaCog />} text="Settings" isOpen={isOpen} />
+          <LogoutButton />
         </nav>
       </div>
     </div>

@@ -1,8 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { useAuth } from "../utils/authContext";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
+  const handleNavigation = () => {
+    if (user) {
+      if (user.role === "HOST") {
+        navigate("/user/host");
+      } else if (user.role === "RENTER") {
+        navigate("/user");
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,10 +74,19 @@ export const Navbar: React.FC = () => {
           Connect Us
         </a>
       </div>
-      <a href="login" className="border-b border-purple-600 text-sm">
-        
-        <FaUserCircle size={26} className="text-purple-600" />
-      </a>
+      {user ? (
+        <div
+          className="cursor-pointer flex items-center space-x-2 hover:text-neutral-400 duration-300"
+          onClick={handleNavigation}
+        >
+          <span className="font-Urbanist text-xs">{user.name}</span>{" "}
+          <FaUserCircle size={26} className="text-purple-600" />
+        </div>
+      ) : (
+        <a href="/login" className="border-b border-purple-600 text-sm">
+          Login
+        </a>
+      )}
     </nav>
   );
 };

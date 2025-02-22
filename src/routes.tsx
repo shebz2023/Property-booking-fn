@@ -7,6 +7,7 @@ import RenterDashboard from "./pages/user/RenterDashboard";
 import { UserLayout } from "./layouts/User.layouts";
 import HostDashboard from "./pages/user/HostDashboard";
 import PropertiesPage from "./pages/PropertiesPage";
+import Profile from "./pages/user/Profile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <RenterDashboard /> },
       { path: "host", element: <HostDashboard /> },
+      { path: "profile", element: <Profile /> },
     ],
   },
 ]);

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 import {
   FaHome,
   FaCalendarAlt,
@@ -8,9 +9,10 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { SidebarItem } from "./SideBarItem";
+import LogoutButton from "./Logout";
+
 export default function HostSideBar() {
   const [isOpen, setIsOpen] = useState(true);
-
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
@@ -49,6 +51,7 @@ export default function HostSideBar() {
           />
           <SidebarItem icon={<FaUser />} text="Profile" isOpen={isOpen} />
           <SidebarItem icon={<FaCog />} text="Settings" isOpen={isOpen} />
+          <LogoutButton />
         </nav>
       </div>
     </div>
