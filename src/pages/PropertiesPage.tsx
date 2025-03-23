@@ -7,24 +7,20 @@ import PropertyCard from "../components/PropertyCard";
 import { GET_PROPERTIES } from "../services/api";
 import { useQuery } from "@apollo/client";
 import LoadingSkeleton from "../components/LoadingSkeleton";
-import { useAuth } from "../utils/authContext";
 
 export default function PropertiesPage() {
   interface Property {
     title: string;
     description: string;
-    pricePerNight: number;
+    price: string;
     location: string;
     id: string;
     image: string;
   }
-  const { user } = useAuth();
-  
-  const { loading, error, data } = useQuery(GET_PROPERTIES);
+
+  const { loading, data } = useQuery(GET_PROPERTIES);
 
   if (loading) return <LoadingSkeleton />;
-  if (error) return `Error! ${error.message}`;
-  console.log(data);
 
   return (
     <div className="bg-neutral-950 h-screen">
@@ -84,9 +80,15 @@ export default function PropertiesPage() {
           </div>
         </div>
         <div className="p-18 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data?.properties?.map((property: Property, index: number) => (
-            <PropertyCard key={index} property={property} />
-          ))}
+          {data?.properties?.length > 0 ? (
+            data.properties.map((property: Property, index: number) => (
+              <PropertyCard key={index} property={property} />
+            ))
+          ) : (
+            <div className="col-span-full text-center text-white">
+              No properties found. Please try again later.
+            </div>
+          )}
         </div>
       </section>
       <BottomSection />

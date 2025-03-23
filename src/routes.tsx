@@ -3,7 +3,7 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { RootLayout } from "./layouts/RootLayout";
 import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/Auth/Login";
-import { UserLayout } from "./layouts/User.layouts";
+import { UserLayout } from "./layouts/user.layouts";
 import PropertiesPage from "./pages/PropertiesPage";
 import Profile from "./pages/user/Profile";
 import MyProperties from "./pages/user/MyProperties";

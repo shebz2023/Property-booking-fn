@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 interface Property {
   title: string;
   description: string;
-  pricePerNight: number;
+  price: string;
   location: string;
   id: string;
   image: string;
@@ -27,7 +27,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
         <div className="flex justify-between">
           <div className="flex flex-col">
             <h2 className="text-neutral-400 text-xs">Price</h2>
-            <p className="text-md text-white">${property.pricePerNight}</p>
+            <p className="text-md text-white">${property.price}</p>
           </div>
           <button className="h-10 cursor-pointer w-fit text-xs bg-purple-950 text-white px-4 rounded-lg hover:bg-purple-800 transition duration-300">
             View Property Details

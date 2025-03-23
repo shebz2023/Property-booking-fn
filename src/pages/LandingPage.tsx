@@ -9,7 +9,7 @@ import BottomSection from "../components/BottomSection";
 
 export const LandingPage: React.FC = () => {
   return (
-    <div className="bg-cover bg-center">
+    <div className="bg-cover bg-center bg-black">
       <section
         className="font-poppin bg-black"
         style={{ backgroundImage: `url(${bgrid})` }}
@@ -17,7 +17,7 @@ export const LandingPage: React.FC = () => {
         <Hero />
         <StatsHero />
       </section>
-      <section className="min-h-screen">
+      <section className="">
         <FeaturedProperties />
       </section>
       <section className="">

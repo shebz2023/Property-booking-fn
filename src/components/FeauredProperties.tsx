@@ -3,28 +3,34 @@ import PropertyCard from "./PropertyCard";
 const FeaturedProperties = () => {
   const properties = [
     {
+      id: "1",
       title: "Convention center",
       description:
         "This sleek, modern house features clean lines and an open-concept floor plan",
       features: ["4-Bedroom", "3-Bathroom", "Villa"],
       price: "$550,000",
       image: featuredimage,
+      location: "sanfransico",
     },
     {
+      id: "2",
       title: "Ladisona blue",
       description:
         "This charming Victorian home is a blend of intricate architecture ",
       features: ["2-Bedroom", "2-Bathroom"],
       price: "$550,000",
       image: featuredimage,
+      location: "Kakiru",
     },
     {
+      id: "3",
       title: "Rustic Retreat Cottage",
       description:
         "loremIt is a long established fact that a reader will be distracted ",
       features: ["3-Bedroom", "2.5-Bathroom"],
       price: "$550,000",
       image: featuredimage,
+      location: "kgl",
     },
   ];
 
