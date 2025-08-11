@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: rentalbooking-fn
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: rentalbooking-fn
+  template:
+    metadata: 
+      labels:
+        app: rentalbooking-fn
+    spec:
+      containers: 
+      - name: rentalbooking-fn
+        image: 724184224123.dkr.ecr.eu-north-1.amazonaws.com/rentalbooking-fn
+        ports: 
+        - containerPort: 80
